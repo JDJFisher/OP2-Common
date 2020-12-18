@@ -896,7 +896,6 @@ def op2_gen_cuda_simple(master, date, consts, kernels,sets, macro_defs):
 #
 # for reproducible incs method
 #
-    
     repro_if=0
     if reproducible:
       if repr_coloring:
@@ -916,6 +915,8 @@ def op2_gen_cuda_simple(master, date, consts, kernels,sets, macro_defs):
               IF(line[:-3])
         if not repro_if:
           IF('set->size > 0')
+      else:
+        IF('set->size > 0')
     else:
       IF('set->size > 0')
     code('')
